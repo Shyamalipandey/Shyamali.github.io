@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Shyamali Pandey — Neon Portfolio</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Extra custom neon/glow effects */
+        
+         :root {
+            --neon-1: #00f5ff;
+            --neon-2: #7c3aed;
+            --neon-3: #ff00ff;
+            --bg: #05060a;
+        }
+        
+        body {
+            background: radial-gradient(1200px 600px at 10% 10%, rgba(124, 58, 237, 0.08), transparent 10%), radial-gradient(800px 400px at 90% 90%, rgba(0, 245, 255, 0.06), transparent 10%), var(--bg);
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 6px rgba(124, 58, 237, 0.9), 0 0 12px rgba(124, 58, 237, 0.6), 0 0 18px rgba(0, 245, 255, 0.3);
+        }
+        
+        .neon-border {
+            box-shadow: 0 0 6px rgba(0, 245, 255, 0.25), inset 0 0 30px rgba(124, 58, 237, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(6px);
+        }
+        /* subtle floating animation */
+        
+        @keyframes floaty {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-6px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        
+        .floaty {
+            animation: floaty 6s ease-in-out infinite;
+        }
+        /* focus ring neon */
+        
+        .focus-neon:focus {
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 245, 255, 0.45), 0 0 20px rgba(124, 58, 237, 0.25);
+            border-radius: 9999px;
+        }
+        /* small-screen tweak for big glows */
+        
+        @media (max-width:640px) {
+            .neon-text {
+                text-shadow: 0 0 6px rgba(124, 58, 237, 0.9);
+            }
+        }
+    </style>
+</head>
+
+<body class="text-slate-100 antialiased">
+
+    <!-- NAVBAR -->
+    <header class="fixed w-full z-40 top-0">
+        <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full neon-border flex items-center justify-center bg-gradient-to-tr from-purple-700 to-cyan-400">
+                    <!-- small logo -->
+                    <span class="font-bold text-sm text-black">SP</span>
+                </div>
+                <span class="font-semibold neon-text">Shyamali Pandey</span>
+            </a>
+            <nav class="space-x-6 hidden md:flex">
+                <a href="#about" class="hover:text-cyan-300">About</a>
+                <a href="#skills" class="hover:text-cyan-300">Skills</a>
+                <a href="#projects" class="hover:text-cyan-300">Projects</a>
+                <a href="#contact" class="hover:text-cyan-300">Contact</a>
+            </nav>
+            <!-- mobile menu (simple) -->
+            <div class="md:hidden">
+                <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="px-3 py-2 rounded focus-neon">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/></svg>
+        </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-transparent px-5 pb-4">
+            <div class="flex flex-col gap-3 text-right">
+                <a href="#about" class="block">About</a>
+                <a href="#skills" class="block">Skills</a>
+                <a href="#projects" class="block">Projects</a>
+                <a href="#contact" class="block">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="pt-28">
+        <section id="about" class="max-w-6xl mx-auto px-5 py-12">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <!-- left - text -->
+                <div class="space-y-6">
+                    <h1 class="text-4xl sm:text-5xl font-extrabold neon-text leading-tight">
+                        Hi, I'm <span class="text-cyan-300">Shyamali</span><br />
+                        <span class="text-pink-400 text-2xl font-medium">Java • C • HTML • CSS</span>
+                    </h1>
+                    <p class="text-slate-300 max-w-xl">
+                        I'm a passionate developer who loves building clean and interactive web experiences. I specialize in core programming (Java, C) and front-end fundamentals (HTML, CSS). This neon-styled portfolio shows my skills and projects.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#projects" class="inline-block px-5 py-3 rounded-full bg-gradient-to-tr from-cyan-400 to-purple-600 text-black font-semibold shadow-lg hover:scale-105 transition">View Projects</a>
+                        <a href="#contact" class="inline-block px-5 py-3 rounded-full border border-white/10 neon-border hover:scale-105 transition">Contact Me</a>
+                    </div>
+
+                    <!-- Skill badges small -->
+                    <div class="flex flex-wrap gap-3 mt-4">
+                        <span class="px-4 py-2 rounded-full neon-border text-sm text-slate-100">Java</span>
+                        <span class="px-4 py-2 rounded-full neon-border text-sm text-slate-100">C</span>
+                        <span class="px-4 py-2 rounded-full neon-border text-sm text-slate-100">HTML</span>
+                        <span class="px-4 py-2 rounded-full neon-border text-sm text-slate-100">CSS</span>
+                    </div>
+                </div>
+
+                <!-- right - photo card -->
+                <div class="mx-auto w-full max-w-sm">
+                    <div class="relative neon-border rounded-2xl p-4 overflow-hidden floaty">
+                        <!-- colorful corner glows -->
+                        <div class="absolute -left-10 -top-10 w-40 h-40 rounded-full bg-gradient-to-tr from-purple-500 to-cyan-300 opacity-30 blur-3xl"></div>
+                        <div class="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-gradient-to-tr from-pink-500 to-yellow-300 opacity-25 blur-3xl"></div>
+
+                        <!-- Photo -->
+                        <!-- Replace the src below with your own photo file name (e.g., "myphoto.jpg") -->
+                        <img id="profilePhoto" src="https://i.pravatar.cc/400" alt="Shyamali Pandey" class="w-56 h-56 object-cover rounded-full mx-auto border-4 border-white/10 shadow-xl" />
+
+                        <div class="text-center mt-4">
+                            <h3 class="font-semibold text-xl">Shyamali Pandey</h3>
+                            <p class="text-sm text-slate-300">Developer — Java & Frontend</p>
+                            <div class="flex items-center justify-center gap-3 mt-3">
+                                <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center neon-border">in</a>
+                                <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center neon-border">GH</a>
+                                <a href="#" class="w-9 h-9 rounded-full flex items-center justify-center neon-border">✉</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="py-12">
+            <div class="max-w-6xl mx-auto px-5">
+                <h2 class="text-3xl font-bold neon-text text-center mb-8">Skills</h2>
+                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="p-5 neon-border rounded-xl text-center">
+                        <div class="text-4xl mb-3">☕</div>
+                        <h4 class="font-semibold">Java</h4>
+                        <p class="text-sm text-slate-300 mt-1">OOP, Collections, File I/O</p>
+                    </div>
+                    <div class="p-5 neon-border rounded-xl text-center">
+                        <div class="text-4xl mb-3">🧩</div>
+                        <h4 class="font-semibold">C</h4>
+                        <p class="text-sm text-slate-300 mt-1">Pointers, Arrays, Algorithms</p>
+                    </div>
+                    <div class="p-5 neon-border rounded-xl text-center">
+                        <div class="text-4xl mb-3">🌐</div>
+                        <h4 class="font-semibold">HTML</h4>
+                        <p class="text-sm text-slate-300 mt-1">Semantic markup, Accessibility</p>
+                    </div>
+                    <div class="p-5 neon-border rounded-xl text-center">
+                        <div class="text-4xl mb-3">🎨</div>
+                        <h4 class="font-semibold">CSS</h4>
+                        <p class="text-sm text-slate-300 mt-1">Responsive Layouts, Animations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="py-12 bg-gradient-to-b from-transparent to-black/5">
+            <div class="max-w-6xl mx-auto px-5">
+                <h2 class="text-3xl font-bold neon-text text-center mb-8">Projects</h2>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Card 1 -->
+                    <article class="neon-border rounded-2xl p-6 bg-gradient-to-br from-white/2 to-white/3 hover:scale-102 transition">
+                        <h3 class="text-xl font-semibold text-cyan-300">Portfolio Website</h3>
+                        <p class="text-slate-300 mt-2">A responsive personal portfolio built with Tailwind CSS and modern design. Shows projects and contact info.</p>
+                        <div class="mt-4 flex gap-3">
+                            <span class="px-3 py-1 rounded-full text-sm bg-white/5">HTML</span>
+                            <span class="px-3 py-1 rounded-full text-sm bg-white/5">CSS</span>
+                            <span class="px-3 py-1 rounded-full text-sm bg-white/5">Tailwind</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="neon-border rounded-2xl p-6 bg-gradient-to-br from-white/2 to-white/3 hover:scale-102 transition">
+                        <h3 class="text-xl font-semibold text-pink-300">Student Management (Java)</h3>
+                        <p class="text-slate-300 mt-2">Console-based Java application to add, edit and list student records with file storage.</p>
+                        <div class="mt-4 flex gap-3">
+                            <span class="px-3 py-1 rounded-full text-sm bg-white/5">Java</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="neon-border rounded-2xl p-6 bg-gradient-to-br from-white/2 to-white/3 hover:scale-102 transition">
+                        <h3 class="text-xl font-semibold text-yellow-300">Responsive Web Page</h3>
+                        <p class="text-slate-300 mt-2">A sample front-end page showcasing layouts using Flexbox and Grid.</p>
+                        <div class="mt-4 flex gap-3">
+                            <span class="px-3 py-1 rounded-full text-sm bg-white/5">HTML</span>
+                            <span class="px-3 py-1 rounded-full text-sm bg-white/5">CSS</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="neon-border rounded-2xl p-6 bg-gradient-to-br from-white/2 to-white/3 hover:scale-102 transition">
+                        <h3 class="text-xl font-semibold text-green-300">Algorithm Practice</h3>
+                        <p class="text-slate-300 mt-2">Small algorithm problems solved in C and Java to strengthen fundamentals.</p>
+                        <div class="mt-4 flex gap-3">
+                            <span class="px-3 py-1 rounded-full text-sm bg-white/5">C</span>
+                            <span class="px-3 py-1 rounded-full text-sm bg-white/5">Java</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="py-12">
+            <div class="max-w-3xl mx-auto px-5 text-center">
+                <h2 class="text-3xl font-bold neon-text mb-4">Let's Connect</h2>
+                <p class="text-slate-300 mb-6">Koi project idea ho ya sirf baat karni ho — mujhse contact karo.</p>
+
+                <!-- simple contact form (non-functional, replace action to add backend) -->
+                <form class="grid grid-cols-1 gap-4">
+                    <input class="px-4 py-3 rounded-lg bg-white/5 border border-white/6 focus-neon" type="text" placeholder="Your name" />
+                    <input class="px-4 py-3 rounded-lg bg-white/5 border border-white/6 focus-neon" type="email" placeholder="Email address" />
+                    <textarea class="px-4 py-3 rounded-lg bg-white/5 border border-white/6 focus-neon" rows="4" placeholder="Message"></textarea>
+                    <button type="button" class="mt-2 px-6 py-3 rounded-full bg-gradient-to-tr from-cyan-400 to-pink-400 font-semibold text-black hover:scale-105 transition">Send Message</button>
+                </form>
+
+                <p class="text-slate-400 mt-6">Email: <span class="text-cyan-300">shyamalipandey@example.com</span></p>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="py-6 mt-12 text-center text-slate-400">
+            © 2025 Shyamali Pandey • Built with ❤️ and neon vibes
+        </footer>
+    </main>
+
+    <!-- small script to allow replacing demo photo quickly -->
+    <script>
+        // If you have a local photo file in same folder named "myphoto.jpg",
+        // uncomment the line below to auto-load it instead of the demo avatar.
+        // document.getElementById('profilePhoto').src = 'myphoto.jpg';
+    </script>
+</body>
+
+</html>
